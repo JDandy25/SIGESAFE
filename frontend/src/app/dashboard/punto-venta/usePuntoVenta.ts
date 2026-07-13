@@ -242,7 +242,7 @@ export const usePuntoVenta = () => {
   }, [carrito, formularioVenta, clientesLista, empresa, totales.total]);
 
   const handleCambioComprobante = useCallback((tipo: string) => {
-    const serieMap: Record<string, string> = { "Boleta": "B001", "Factura": "F001", "Nota de Venta": "NV01" };
+    const serieMap: Record<string, string> = { "03": "B001", "01": "F001", "Nota de Venta": "NV01" };
     setFormularioVenta(prev => ({ ...prev, tipo_comprobante: tipo, serie: serieMap[tipo] ?? "B001" }));
   }, []);
 
