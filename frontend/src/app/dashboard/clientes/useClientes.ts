@@ -147,17 +147,18 @@ export const useClientes = () => {
       
       const res = await response.json();
       
-      if (res.success && res.data) {
+      if (json.success) {
+        const datos = json.data;
+    
         setFormData(prev => ({
-          ...prev,
-          // RUC devuelve razon_social, DNI devuelve nombre. Atrapamos ambos.
-          nombre: res.data.razon_social || res.data.nombre || prev.nombre,
-          apellido: res.data.apellido || prev.apellido,
-          direccion: res.data.direccion || prev.direccion,
-          // Aseguramos atrapar la ubicación
-          distrito: res.data.distrito || prev.distrito,
-          provincia: res.data.provincia || prev.provincia,
-          departamento: res.data.departamento || prev.departamento,
+            ...prev,
+           
+            nombre: datos.razon_social || datos.nombre || "", 
+            apellido: datos.apellido || "",
+            direccion: datos.direccion || "",
+            departamento: datos.departamento || "",
+            provincia: datos.provincia || "",
+            distrito: datos.distrito || ""
         }));
         toast.success("Datos obtenidos correctamente");
       } else {
