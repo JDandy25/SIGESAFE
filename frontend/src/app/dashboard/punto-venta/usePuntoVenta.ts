@@ -209,7 +209,7 @@ export const usePuntoVenta = () => {
       }
 
       const jsonVenta = await resVenta.json();
-      const ventaCreada = jsonVenta.data;
+      const ventaCreada = jsonVenta.sale;
       
       toast.success(`Venta registrada · ${ventaCreada.tipo_comprobante} ${ventaCreada.serie}-${ventaCreada.correlativo}`);
 
