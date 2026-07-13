@@ -55,8 +55,6 @@ const MENU_GROUPS = [
     title: "Sistema",
     items: [
       { name: "Reportes", icon: Search, path: "/reportes", roles: ["admin"] },
-      { name: "Auditoría", icon: History, path: "/auditoria", roles: ["admin"] },
-      { name: "Ajustes", icon: Settings, path: "/ajustes", roles: ["admin"] },
     ],
   },
 ];
