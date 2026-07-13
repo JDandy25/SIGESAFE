@@ -130,6 +130,7 @@ export const useClientes = () => {
   };
 
   // --- CONSULTAR DOCUMENTO (API Externa) ---
+  // --- CONSULTAR DOCUMENTO (API Externa) ---
   const buscarDocumento = async () => {
     if (!formData.tipo_documento || !formData.numero_documento) {
       toast.warning("Seleccione el tipo y escriba el número de documento");
@@ -147,12 +148,12 @@ export const useClientes = () => {
       
       const res = await response.json();
       
-      if (json.success) {
-        const datos = json.data;
+      // CAMBIO AQUÍ: Cambiamos 'json.success' por 'res.success'
+      if (res.success) {
+        const datos = res.data; // CAMBIO AQUÍ: 'res.data' en lugar de 'json.data'
     
         setFormData(prev => ({
             ...prev,
-           
             nombre: datos.razon_social || datos.nombre || "", 
             apellido: datos.apellido || "",
             direccion: datos.direccion || "",
