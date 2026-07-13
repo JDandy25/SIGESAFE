@@ -1,2 +1,3 @@
-/api/*  https://sigesafe-backend.onrender.com/api/:splat  200
-/*      /index.html   200
+/api/*      https://sigesafe-backend.onrender.com/api/:splat      200
+/storage/*  https://sigesafe-backend.onrender.com/storage/:splat  200
+/*          /index.html   200
